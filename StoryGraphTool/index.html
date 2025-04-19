@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <div id="static-message" style="font-size: 20px; margin-top: 10px; color: black;">
+        You've picked up the teachers walkie talkie. Use this to manage your time and make sure you don't get caught!
+    </div>
+    <div id="timer" style="font-size: 20px; margin-top: 10px; color: red;"></div>
+    
+    <body>    
+        <div id="timer" style="font-size: 20px; margin-top: 10px;"></div> 
+    </body>
+    
+    <script src="engine.js"></script>
+    <script src="rules.js"></script>
+    <script>
+        function startCountdown(durationInSeconds){
+        const timerElement = document.getElementById("timer");
+        let remainingTime = durationInSeconds;
+
+        //timerElement.innerText = "You've picked up the teachers walkie talkie. Use this to manage your time and make sure you don't get caught!";
+        const timerInterval = setInterval(() => {
+            if (remainingTime <= 0){
+                clearInterval(timerInterval);
+                //timerElement.innerText = "You hear the final bell ring telling you that lunch is over and your class has started. You realize you're going to fail :("
+                endGame();
+            } else {
+                
+                if (remainingTime < 10){
+                    timerElement.innerText = `You have ${remainingTime} seconds left until the bell rings!`;
+                } else {
+                    timerElement.innerText = `You have ${remainingTime} seconds left until the bell rings!`;
+                }
+                remainingTime--;
+            }
+        },1000);
+    }
+    function endGame(){
+        
+        if (typeof timerInterval !== "undefined"){
+            clearInterval(this.engine.timerInterval);
+        }
+
+        document.body.innerHTML = `
+            <div id ="game-over">
+                <h2>You Failed!</h2>
+                <p>Time's up! The bells rung, teachers are heading back to their classes and you're about to get caught.<br>This was a good attempt but just study next time.</p>
+                <p> Credits: Story by Ava Malinowski, Created by Adam Smith (amsmith@ucsc.edu).</p>
+            </div>
+        `;
+    }
+    startCountdown(10);
+    
+</script>
+</head>
+<body>
+</body>
+
+</html>

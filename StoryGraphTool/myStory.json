@@ -1,0 +1,297 @@
+{
+    "Title": "Objective A+",
+    "Credits": "Story by Ava Malinowski, Created by Adam Smith (amsmith@ucsc.edu).",
+    "InitialLocation": "Classroom",
+    "Locations": {
+        "Classroom": {
+            "Body": "You are royally screwed. Your US History test is in 20 minutes and you have not studied a lick.\n In order for you to have any chance of passing you need to find the answer sheet.",
+            "Choices": [
+                {
+                    "Text": "Check teachers desk?",
+                    "Target": "Desk"
+                },
+                {   "Text": "Gather intel in the lunchroom.",
+                    "Target": "Lunchroom"
+                }
+            ]
+        },
+        "Desk": {
+            "Body": "On the desk you notice that her computer is on. You can either look there or search her drawers.",
+            "Choices": [
+                {
+                    "Text": "Turn back.",
+                    "Target": "Classroom"
+                },
+                {
+                    "Text": "Her computer's on...",
+                    "Target": "Computer"
+                },
+                {
+                    "Text": "Check the drawers.",
+                    "Target": "Drawers"
+                }
+            ]
+        },
+        "Lunchroom": {
+            "Body": "You enter the lunchroom at the busy period and see two of your friends sitting at a table and another one across the room. Jake who's closer to you is probably gonna shoot this plan down but it might be worth a shot.",
+            "Choices": [
+                {
+                    "Text": "Ask Jake?",
+                    "Target": "Jake"
+                },
+                {
+                    "Text": "Go see who's sitting across the room.",
+                    "Target": "Jeremy"
+                }
+            ]
+        },
+        "Jake": {
+            "Body": "Yo, Jake have you studied for the test today? I'm totally gonna fail. Listen, I have an idea to go find and copy the answers before the class starts. Do you have any idea where they could be?<br> Jake: Dude that's such an awful plan. I know we are homies but I'm not gonna get caught being an accomplise to you cheating. Sorry dude.",
+            "Choices": [
+                {
+                    "Text": "... Back to square one.",
+                    "Target": "Lunchroom"
+                }
+            ]
+        },
+        "Jeremy": {
+            "Body": "Hey Jeremy, whats up? Yo, mind helping me out?<br> Jeremy: Ya what's up?<br> Ok so I need to somehow find the answer sheet for todays test or else I'm totally failing. Do you have any idea where the teacher keeps the answer sheet?<br> Jeremy: Uhh ya I think Mr. Mackey's the one who made the test so maybe it's in his desk somewhere?<br> Got it, you're a life saver!",
+            "Choices": [
+                {
+                    "Text": "Head back to class.",
+                    "Target": "Classroom"
+                },
+                {
+                    "Text": "Go search Mr. Mackey's room.",
+                    "Target": "Mackey"
+                }
+                ]
+        },
+        "Mackey": {
+            "Body": "You enter Mr. Mackey's room and see that he's not there. Thank God. Walking over to his desk you see that his computer is turned off and locked. It seems like you'll need a passcode.",
+            "Choices": [
+                {
+                    "Text": "Try your luck with the code.",
+                    "Target": "Computer2"
+                },
+                {
+                    "Text": "Check the drawers.",
+                    "Target": "MackeyDrawers"
+                },
+                {
+                    "Text": "Enter his password.",
+                    "Target": "MackeysComputer",
+                    "needsPassword": "TribbanAlesia"
+                },
+                {
+                    "Text": "Go back to your classroom.",
+                    "Target": "Classroom"
+                }
+            ]
+        },
+        "MackeyDrawers": {
+            "Body": "You open the drawers and see a bunch of random stuff.",
+            "Choices": [
+                {
+                    "Text": "These look like tests!",
+                    "Target": "emptyTest"
+                }
+            ]
+        },
+        "emptyTest": {
+            "Body": "You appear to have found the actual test questions you'll be taking today, however it's just the questions and no answers.<br>You don't have enough time to google them and write them all down. Better to look for the answer sheet.",
+            "Choices": [
+                {
+                    "Text": "Go back.",
+                    "Target": "Mackey"
+                }
+            ]
+        },
+        "Computer2": {
+            "Body": "You try to guess the password but it doesn't work. Your homeroom teacher had her computer open, maybe you can find her password and use it to guess his.",
+            "Choices": [
+                {
+                    "Text": "Go back.",
+                    "Target": "Mackey"
+                }
+            ]
+        },
+        "MackeysComputer": {
+            "Body": "Fortunately you were able to guess Mr. Mackey's password after seeing your teachers password.<br>There are some files in front of you labeled 'Test Answers' followed by a 1, 2, and 3. You can open any of them.",
+            "Choices": [
+                {
+                    "Text": "Look at Test Answers 1",
+                    "Target": "Answer1.0"
+                },
+                {
+                    "Text": "Look at Test Answers 2",
+                    "Target": "Answer2.0"
+                },
+                {
+                    "Text": "Look at Test Answers 3",
+                    "Target": "Answer3.0"
+                }
+            ]
+        },
+        "Answer1.0": {
+            "Body": "You open the file and see that it is titled English 1A Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending1"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "MackeysComputer"
+                }
+            ]
+        },
+        "Answer2.0": {
+            "Body": "You open the file and see that it is titled US History 3A Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending2"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "MackeysComputer"
+                }
+            ]
+        },
+        "Answer3.0": {
+            "Body": "You open the file and see that it is titled Math 2B Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending1"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "MackeysComputer"
+                }
+            ]
+        },
+        "Computer": {
+            "Body": "You sit down at the computer and see that the teacher is logged in.",
+            "Choices": [
+                {
+                    "Text": "Go back to the classroom.",
+                    "Target": "Classroom"
+                },
+
+                {
+                    "Text": "Check her email.",
+                    "Target": "Email"
+                }
+            ]
+        },
+        "Drawers": {
+            "Body": "You open the drawers and see a bunch of random stuff.",
+            "Choices": [
+                {
+                    "Text": "There's some loose papers.",
+                    "Target": "Paper"
+                },
+                {
+                    "Text": "Check her file folder.",
+                    "Target": "Folder"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Desk"
+                }
+            ]
+        },
+        "Paper": {
+            "Body": "These papers don't seem important. You should probably look elsewhere.",
+            "Choices": [
+                {
+                    "Text": "Go back.",
+                    "Target": "Drawers"
+                }
+            ]
+        },
+        "Folder": {
+            "Body": "Sifting through your teacher's file folders you see a paper that has a passcode on it. Looks like she's forgetful with this stuff.<br> The passcode reads TribbanAlesia.",
+            "Choices": [
+                {
+                    "Text": "Look at emails.",
+                    "Target": "Email",
+                    "foundPassword": "TribbanAlesia"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Drawers"
+                }
+            ]
+        },
+        "Email": {
+            "Body": "You open up her email and see a message from Mr. Mackey with the subject line '9/12/25 Test'. You click on it and see that it has a link to a google drive folder. You click on it and see a folder called 'Test Answers'.<br>Opening the folder you notice that there's three files named 'Test Answers' with a 1, 2, 3 after them.",
+            "Choices": [
+                {
+                    "Text": "Look at Test Answers 1",
+                    "Target": "Answer1"
+                },
+                {
+                    "Text": "Look at Test Answers 2",
+                    "Target": "Answer2"
+                },
+                {
+                    "Text": "Look at Test Answers 3",
+                    "Target": "Answer3"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Folder"
+                }
+            ]
+        },
+        "Answer1": {
+            "Body": "You open the file and see that it is titled English 1A Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending1"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Email"
+                }
+            ]
+        },
+        "Answer2": {
+            "Body": "You open the file and see that it is titled US History 3A Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending2"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Email"
+                }
+            ]
+        },
+        "Answer3": {
+            "Body": "You open the file and see that it is titled Math 2B Test Answers. Do you want to write down these answers?",
+            "Choices": [
+                {
+                    "Text": "Write down answers.",
+                    "Target": "Ending1"
+                },
+                {
+                    "Text": "Go back.",
+                    "Target": "Email"
+                }
+            ]
+        },
+        "Ending1": {
+            "Body": "You write down the answers and head to class. You sit down and take the test. You finish the test and hand it in. A week passes and you get your grades back.<br> With a 0% and a note saying 'See me after class' you realize you should have just studied."
+        },
+        "Ending2": {
+            "Body": "You write down the answers and head to class. You sit down and take the test. You finish the test and hand it in. A week passes and you get your grades back.<br> With a 100% you your grade is saved."
+        }
+        
+    }
+}
